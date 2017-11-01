@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm install --ignore-scripts'
+                sh './src/jenkins-scripts/build.sh'
             }
         }
     }
