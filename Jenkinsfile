@@ -9,7 +9,8 @@ pipeline {
         stage('Test') {
             steps {
               sh 'npm run lint'
-              sh 'npm run test'
+              sh 'export CHROME_BIN=chromium-browser'
+              sh 'xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox'
             }
         }
     }
