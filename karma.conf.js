@@ -9,14 +9,25 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
+      require('karma-phantomjs-launcher'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular/cli/plugins/karma')
+      require('@angular/cli/plugins/karma'),
+      require('karma-junit-reporter')
     ],
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
+    junitReporter: {
+      outputDir: "test-results",
+      outputFile: "unit-test-results.xml"
+    },
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
+      reports: [ 'html', 'lcovonly', 'cobertura', 'text-summary' ],
+      'report-config': {
+        cobertura: {
+          file: 'cobertura.xml'
+        }
+      },
       fixWebpackSourcePaths: true
     },
     angularCli: {
@@ -27,7 +38,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
     singleRun: false
   });
 };
