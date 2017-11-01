@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker 'node:6.3' }
+    agent { docker 'node:6-alpine' }
     stages {
         stage('build') {
             steps {
-                sh 'npm install'
+                sh './jenkins-scripts/build.sh'
             }
         }
     }
