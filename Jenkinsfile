@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm install --save --ignore-scripts'
+                sh 'npm install --ignore-scripts'
             }
         }
     }
