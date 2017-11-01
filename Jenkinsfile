@@ -1,9 +1,10 @@
 pipeline {
     agent { docker 'node:6-alpine' }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh './src/jenkins-scripts/build.sh'
+                sh 'whoami'
+                sh './src/jenkins/scripts/build.sh'
             }
         }
     }
