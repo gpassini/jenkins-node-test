@@ -1,8 +1,15 @@
-node('docker') {
-    checkout scm
-    stage('Build') {
-        docker.image('node:6-alpine').inside {
-            sh 'npm install'
+pipeline {
+    agent { docker 'node:6-alpine' }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+              sh 'npm run lint'
+            }
         }
     }
 }
