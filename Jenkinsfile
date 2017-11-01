@@ -1,5 +1,10 @@
 pipeline {
-    agent { docker 'node:6-alpine' }
+    agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 4200:4200'
+        }
+    }
     stages {
         stage('Build') {
             steps {
@@ -13,7 +18,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh './jenkins/scripts/deploy.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
             }
