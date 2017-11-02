@@ -15,7 +15,6 @@ pipeline {
             steps {
               sh 'npm run lint'
               sh 'npm install -g phantomjs-prebuilt'
-              sh 'phantomjs -v'
               sh 'npm run test'
             }
         }
