@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/gpassini/jenkins-node-test.svg?branch=master)](https://travis-ci.org/gpassini/jenkins-node-test)
+[![CircleCI](https://circleci.com/gh/gpassini/jenkins-node-test.svg?style=svg)](https://circleci.com/gh/gpassini/jenkins-node-test)
 
 # HelloWorld
 
