@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/gpassini/jenkins-node-test.svg?branch=master)
+
 # HelloWorld
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
