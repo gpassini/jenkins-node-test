@@ -13,7 +13,7 @@ install:
   - npm install
 
 script:
-  - npm lint
+  - npm run lint
   # Use Chromium instead of Chrome.
   - export CHROME_BIN=chromium-browser
   - xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
