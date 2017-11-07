@@ -15,6 +15,7 @@ pipeline {
             steps {
               sh 'npm run lint'
               sh 'npm install -g phantomjs-prebuilt'
+              sh 'echo $PHANTOMJS_BIN'
               sh 'export PHANTOMJS_BIN=/usr/local/lib/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs'
               sh 'npm run test -- --single-run --no-progress'
             }
