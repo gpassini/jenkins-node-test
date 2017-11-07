@@ -15,8 +15,7 @@ pipeline {
             steps {
               sh 'npm run lint'
               sh 'npm install -g phantomjs-prebuilt'
-              sh 'apt-get install xvfb'
-              sh 'xvfb-run -a npm run test -- --single-run --no-progress'
+              sh 'npm run test -- --single-run --no-progress'
             }
         }
         stage('Deploy') {
